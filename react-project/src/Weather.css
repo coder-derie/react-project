@@ -1,0 +1,64 @@
+body {
+  font-family: "Mukta", sans-serif;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+h1 {
+  font-family: "Mukta", sans-serif;
+}
+
+ul {
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+li {
+  color: #252525;
+  font-size: 18px;
+  font-weight: 100;
+  height: 19px;
+  line-height: 1;
+  list-style: none;
+}
+li:first-letter {
+  text-transform: capitalize;
+}
+.Weather {
+  max-width: 70%;
+  max-height: 70%;
+  padding: 10px;
+  margin: 30px auto;
+}
+.mb-3 {
+  border-radius: 10px;
+  max-width: 100px;
+  margin-top: 20px;
+}
+.card {
+  max-width: 100%;
+}
+.Weather .date-time {
+  line-height: 20px;
+  color: #00587a;
+}
+.Weather .weather-temperature strong {
+  color: rgb(33, 33, 33);
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
+}
+.Weather .weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+.Weather .weather-temperature .active:hover {
+  text-decoration: none;
+}
+.Weather .units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}
+
+.Weather .footer {
+  color: white;
+}
