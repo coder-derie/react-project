@@ -3,7 +3,7 @@ import './Weather.css';
 
 export default function Weather() {
   let weatherData = {
-    date: "Monday 10:00",
+    date: "Monday 09:00",
     city: "Toronto",
     temperature: -4,
     imgUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
