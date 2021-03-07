@@ -84,7 +84,7 @@ export default function Weather() {
       </div>
       <footer className="footer">
         <a
-          href="https://github.com/coder-derie/Weather-project"
+          href="https://github.com/coder-derie/react-project"
           target="_blank"
         >
           Open-source code
