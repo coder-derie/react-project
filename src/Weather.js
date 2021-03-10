@@ -89,7 +89,8 @@ export default function Weather() {
         >
           Open-source code
         </a>{" "}
-        by Deiriai Myers.
+        by 
+        <a href="https://www.linkedin.com/in/deiriaimyers/" target="_blank" rel="noreferrer">Deiriai Myers</a> .
       </footer>
     </div>
   );
