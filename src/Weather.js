@@ -82,16 +82,7 @@ export default function Weather() {
           <div className="row forecast"></div>
         </div>
       </div>
-      <footer className="footer">
-        <a
-          href="https://github.com/coder-derie/react-project"
-          target="_blank" rel="noreferrer"
-        >
-          Open-source code
-        </a>{" "}
-        by 
-        <a href="https://www.linkedin.com/in/deiriaimyers/" target="_blank" rel="noreferrer">Deiriai Myers</a> .
-      </footer>
+      
     </div>
   );
 }
