@@ -3,13 +3,12 @@ import axios from "axios";
 import './Weather.css';
 
 export default function Weather(props) {
- const [weatherData, setWeatherData]= useState({ready:false});
+ let [weatherData, setWeatherData]= useState({ready:false});
  
  function handleResponse(response){
    console.log(response.data);
-   setWeatherData = ({
+    setWeatherData = ({
     ready:true,
-    city: response.data.name,
     temperature: response.data.main.temp,
     imgUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
     description: response.data.weather[0].description,
