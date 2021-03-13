@@ -21,12 +21,18 @@ li {
 li:first-letter {
   text-transform: capitalize;
 }
+form button {
+  margin: 10px;
+}
 .mb-3 {
   border-radius: 10px;
   margin-top: 20px;
 }
 .card {
   max-width: 100%;
+}
+.Weather form {
+  padding: 10px;
 }
 .Weather .date-time {
   line-height: 20px;

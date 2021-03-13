@@ -1,59 +1,56 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
 import './Weather.css';
 
-export default function Weather() {
-  let weatherData = {
-    date: "Monday 09:00",
-    city: "Toronto",
-    temperature: -4,
+export default function Weather(props) {
+ const [weatherData, setWeatherData]= useState({ready:false});
+ 
+ function handleResponse(response){
+   console.log(response.data);
+   setWeatherData = ({
+    ready:true,
+    city: response.data.name,
+    temperature: response.data.main.temp,
     imgUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
-    description: "Sunny",
-    feelsLike: -7,
-    humidity: 72,
-    wind: 13
-  };
+    description: response.data.weather[0].description,
+    feelsLike: response.data.main.feels_like,
+    humidity: response.data.main.humidity,
+    wind: response.data.wind.speed,
+  });
+ }
+ 
+if(weatherData.ready){
   return (
     <div className="Weather">
       <div className="card border mb-3 page">
-        <div className="card-header">
           <div className="row">
             <div className="col-6 form">
-              <form id="search-form">
+              <form>
                 <input
                   type="text"
                   placeholder="Type a City..."
                   className="search"
-                  autofocus
+                  autoFocus="on"
                   autocomplete="off"
                 />
-                <input
-                  type="submit"
-                  value="Search"
-                  className="btn btn-primary"
-                />
-                <input
-                  type="submit"
-                  value="Current"
-                  className="btn btn-success"
-                />
-              </form>
+                <button type="button" class="btn btn-info">Search</button>
+                </form>
             </div>
             <div className="col-6 date-time">
               <h3>
-                Last Updated:{weatherData.date} <span></span>
+                Last Updated:Monday 09:00  
               </h3>
             </div>
           </div>
-        </div>
         <div className="card-body">
-          <h1>{weatherData.city}</h1>
+          <h1>{props.defaultCity}</h1>
           <div className="card-body">
             <div className="row">
               <div className="col-6">
                 <div className="clearfix weather-temperature">
                   <img
                     src={weatherData.imgUrl}
-                    alt=""
+                    alt={weatherData.description}
                     className="weather-icon float-left"
                   />
                   <div className="float-left">
@@ -85,6 +82,16 @@ export default function Weather() {
       
     </div>
   );
+} else{
+const apiKey="4aebdc826d2f6fe4955b6c3fa809665d";
+ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+ axios.get(apiUrl).then(handleResponse);
+  
+ return(
+    "Loading..."
+  )
+}
+ 
 }
 
 
