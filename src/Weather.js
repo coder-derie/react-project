@@ -7,7 +7,7 @@ export default function Weather(props) {
  
  function handleResponse(response){
    console.log(response.data);
-    setWeatherData = ({
+    setWeatherData({
     ready:true,
     temperature: response.data.main.temp,
     imgUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
@@ -53,7 +53,7 @@ if(weatherData.ready){
                     className="weather-icon float-left"
                   />
                   <div className="float-left">
-                    <strong>{weatherData.temperature}</strong>
+                    <strong>{Math.round(weatherData.temperature)}</strong>
                     <span className="units">
                       <a href="/" className="active">
                         °C
@@ -66,7 +66,7 @@ if(weatherData.ready){
               <div className="col-6">
                 <ul>
                   <li>{weatherData.description}</li>
-                  <li>Feels Like: {weatherData.feelsLike}</li>
+                  <li>Feels Like: {Math.round(weatherData.feelsLike)}℃</li>
                   <li>Humidity: {weatherData.humidity}%</li>
                   <li>Wind: {weatherData.wind}km/h</li>
                 </ul>
