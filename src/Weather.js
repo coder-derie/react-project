@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import './Weather.css';
 
@@ -10,6 +11,7 @@ export default function Weather(props) {
     setWeatherData({
     ready:true,
     temperature: response.data.main.temp,
+    date: new Date(response.data.dt*1000),
     imgUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
     description: response.data.weather[0].description,
     feelsLike: response.data.main.feels_like,
@@ -32,13 +34,11 @@ if(weatherData.ready){
                   autoFocus="on"
                   autocomplete="off"
                 />
-                <button type="button" class="btn btn-info">Search</button>
+                <button type="button" className="btn btn-info">Search</button>
                 </form>
             </div>
             <div className="col-6 date-time">
-              <h3>
-                Last Updated:Monday 09:00  
-              </h3>
+               <FormattedDate date={weatherData.date}/>
             </div>
           </div>
         <div className="card-body">
