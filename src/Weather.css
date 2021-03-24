@@ -40,13 +40,7 @@ form button {
   line-height: 1;
   font-weight: 400;
 }
-.Weather .weather-temperature .active {
-  color: rgb(33, 33, 33);
-  cursor: default;
-}
-.Weather .weather-temperature .active:hover {
-  text-decoration: none;
-}
+
 .Weather .units {
   position: relative;
   font-size: 16px;
