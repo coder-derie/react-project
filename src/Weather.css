@@ -30,6 +30,7 @@ form button {
 }
 .card {
   max-width: 100%;
+  background-color: #eac8af;
 }
 .Weather form {
   padding: 10px;
