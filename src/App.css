@@ -13,8 +13,10 @@ body {
   color: #f48b29;
   text-decoration: underline;
 }
-.App footer {
-  color: #161d6f;
+.App .footer {
+  padding: 0;
   font-size: 12px;
-  margin: 5px;
+  font-weight: bold;
+  text-align: center;
+  color: #161d6f;
 }

@@ -9,7 +9,7 @@ export default function App(){
       <Weather defaultCity="Toronto"/>
       </div>
       <footer className="footer">
-        This project was created by{" "}
+        Project designed by{" "}
         <a href="https://www.linkedin.com/in/deiriaimyers/" target="_blank" rel="noreferrer">
           Deiriai Myers
           </a>{" "} 
