@@ -1,10 +1,11 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import "./WeatherInfo.css";
 
 export default function WeatherInfo(props){
     return <div className="card-body">
-          <h1>{props.data.city}</h1>
+          <h1 className="city">{props.data.city}</h1>
           <div className="card-body">
             <div className="row">
               <div className="col-6">
